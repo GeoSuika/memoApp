@@ -41,7 +41,7 @@ const App = () => {
     const handleDeleteMemo = async (memoId) => {
         try {
           console.log('handleDeleteMemo Start!');
-          const response = await fetch('http://localhost:3001/api/memos/${memoId}', {
+          const response = await fetch(`http://localhost:3001/api/memos/${memoId}`, {
             method: 'DELETE',
           });
     

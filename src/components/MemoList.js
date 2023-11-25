@@ -7,11 +7,18 @@ const MemoList = ({ memos, onDelete }) => {
   return (
     <div>
       <h2>Memo List</h2>
-      <ul>
+      <table>
+        <tbody>
+          <tr>
+            <th>title</th>
+            <th>content</th>
+            <th>button</th>
+          </tr>
         {memos.map((memo) => (
           <MemoItem key={memo.id} memo={memo} onDelete={onDelete} />
         ))}
-      </ul>
+        </tbody>
+      </table>
     </div>
   );
 };

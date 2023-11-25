@@ -4,11 +4,11 @@ import React from 'react';
 
 const MemoItem = ({ memo, onDelete }) => {
   return (
-    <li>
-      <span>{memo.title}</span>
-      <span>{memo.content}</span>
-      <button onClick={() => onDelete(memo.id)}>Delete</button>
-    </li>
+    <tr>
+      <td>{memo.title}</td>
+      <td>{memo.content}</td>
+      <td><button onClick={() => onDelete(memo.id)}>Delete</button></td>
+    </tr>
   );
 };
 

@@ -139,16 +139,20 @@ app.delete('/api/memos/:id',(req,res) =>{
     console.log('メモの削除 start!');
     const memoId = req.params.id;
     // トランザクションの開始
+    console.log('１');
     db.run('BEGIN TRANSACTION');
     db.run('DELETE FROM memos WHERE id = ?', [memoId],(err) => {
         if(err){
+            console.log('２');
             console.error('Database error:', err.message);
             res.status(500).json({error: 'Internal Server Error' });
         }else{
+            console.log('３');
             res.json({success: true});
         }
         // トランザクションのコミット
         db.run('COMMIT');        
+        console.log('４');
     });
 });
 
